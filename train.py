@@ -62,6 +62,8 @@ for step in range(args.iterations):
 
     inputs = torch.nn.utils.rnn.pad_sequence(data, batch_first=True)
     inputs = inputs.to(device)
+    # data: list of tensors. always end with 0.
+    # lengths: tensor of ints
 
     # Run forward pass.
     model.train()
